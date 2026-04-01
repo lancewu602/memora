@@ -1,7 +1,7 @@
 [project]
 name = "memora"
 version = "0.1.0"
-description = ""
+description = "私人记忆Agent助手"
 authors = [
     {name = "wuqinglong",email = "lancewu602@qq.com"}
 ]
@@ -11,6 +11,11 @@ dependencies = [
     "fastapi>=0.115.0",
     "uvicorn[standard]>=0.34.0",
     "chromadb>=0.4.22",
+    "langchain>=0.3.0",
+    "langgraph>=0.2.0",
+    "volcengine-python-sdk[ark]>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
 ]
 
 [tool.poetry]
@@ -19,3 +24,9 @@ packages = [{include = "memora", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.2,<10.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
