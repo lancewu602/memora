@@ -12,7 +12,7 @@ def get_text_embedding(text: str) -> list[float]:
         input=[{"type": "text", "text": text}],
         encoding_format="float",
     )
-    return resp.data[0].embedding
+    return resp.data.embedding
 
 
 def get_text_embeddings(texts: list[str]) -> list[list[float]]:
@@ -24,7 +24,7 @@ def get_text_embeddings(texts: list[str]) -> list[list[float]]:
             input=[{"type": "text", "text": text}],
             encoding_format="float",
         )
-        embeddings.append(resp.data[0].embedding)
+        embeddings.append(resp.data.embedding)
     return embeddings
 
 
